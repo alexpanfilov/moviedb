@@ -3,22 +3,27 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 import styled, {createGlobalStyle} from 'styled-components';
 
-const GlobalStyle = createGlobalStyle `
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+const GlobalStyle = createGlobalStyle`
+  {
+    margin: 0
+  ;
+    padding: 0
+  ;
+    box-sizing: border-box
+  ;
+  }
 `
 ReactDOM.render(
-  <React.StrictMode>
-    <GlobalStyle />
-    <BrowserRouter>
-    <App />
-    </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <GlobalStyle/>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+            <App/>
+        </BrowserRouter>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
